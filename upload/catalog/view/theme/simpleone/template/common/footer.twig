@@ -1,0 +1,51 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      {% if informations %}
+      <div class="col-sm-3 text-center">
+        <h5>{{ text_information }}</h5>
+        <ul class="list-unstyled f-l">
+         {% for information in informations %}
+          <li class="bb"><a href="{{ information.href }}">{{ information.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      <div class="col-sm-3 text-center">
+        <h5>{{ text_service }}</h5>
+        <ul class="list-unstyled f-l">
+          <li class="bb"><a href="{{ contact }}">{{ text_contact }}</a></li>
+          <li class="bb"><a href="{{ return }}">{{ text_return }}</a></li>
+          <li class="bb"><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3 text-center">
+        <h5>{{ text_extra }}</h5>
+        <ul class="list-unstyled f-l">
+          <li class="bb"><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
+          <li class="bb"><a href="{{ voucher }}">{{ text_voucher }}</a></li>
+          <li class="bb"><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
+          <li class="bb"><a href="{{ special }}">{{ text_special }}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3 text-center">
+        <h5>{{ text_account }}</h5>
+        <ul class="list-unstyled f-l">
+          <li class="bb"><a href="{{ account }}">{{ text_account }}</a></li>
+          <li class="bb"><a href="{{ order }}">{{ text_order }}</a></li>
+          <li class="bb"><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
+          <li class="bb"><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="ffc">Theme by <a href="https://spearthemes.com">Spearthemes</a> - {{ powered }}</p>
+  </div>
+</footer>
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+</body></html>
