@@ -361,6 +361,7 @@ class ControllerApiOrder extends Controller {
 	}
 
 	public function edit() {
+ini_set("display_errors", '1');
 		$this->load->language('api/order');
 
 		$json = array();

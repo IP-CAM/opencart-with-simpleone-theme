@@ -1,0 +1,31 @@
+{{ header }}
+<div class="container">
+	<ul class="breadcrumb">
+	  {% for breadcrumb in breadcrumbs %}
+	  <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+	  {% endfor %}
+	</ul>
+	<div class="row">
+		{% if vendors %}
+			{% for vendor in vendors %}
+				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+					<div class="allendor product-thumb">
+						<div class="image">
+							<a href="{{ vendor.href }}">
+								<img src="{{ vendor.image }}" alt="fdcsxz">
+							</a>
+						</div>
+						<div class="caption">
+							<p><a href=""><i class="fa fa-home"></i>{{ vendor.store }}</a></p>
+							<p><a href=""><i class="fa fa-envelope"></i>{{ vendor.email }}</a></p>
+
+							<p><a href=""><i class="fa fa-phone"></i>{{ vendor.telephone }}</a></p>
+
+						</div>
+					</div>		
+				</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+</div>
+{{ footer }}

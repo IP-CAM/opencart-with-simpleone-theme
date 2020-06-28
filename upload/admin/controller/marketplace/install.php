@@ -235,6 +235,7 @@ class ControllerMarketplaceInstall extends Controller {
 	}
 
 	public function xml() {
+
 		$this->load->language('marketplace/install');
 
 		$json = array();
