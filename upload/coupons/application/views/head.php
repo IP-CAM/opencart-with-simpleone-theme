@@ -29,7 +29,5 @@
         var HOST = "<?php echo base_url() ?>";
     </script>
     <link rel="stylesheet" type="text/css" href="/public/css/common.css">
-
-    
 </head>
 <body>
