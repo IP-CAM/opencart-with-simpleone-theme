@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	//'username' => 'nilesh56',
-	'password' => '',
-	'database' => 'localsquare',
+	'hostname' => 'nk-db.c1mxmujfpbmz.us-east-1.rds.amazonaws.com',
+	//'username' => 'root',
+	'username' => 'nilesh56',
+	'password' => 'nilesh56',
+	'database' => 'nkdb',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
