@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://localhost/us';
-$config['base_url'] = 'http://www.localsqaure.in/coupons';
+$config['base_url'] = 'http://www.localsquare.in/coupons';
 
 /*
 |--------------------------------------------------------------------------
