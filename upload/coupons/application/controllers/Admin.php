@@ -68,4 +68,33 @@ class Admin extends CI_Controller {
         header("location:".base_url("admin/login"));
         return false;
     }
+
+    public function addcoupons() {
+        $this->isAdmin();
+
+        $this->load->view('head');
+		$this->load->view('admin_coupons');
+    }
+
+    public function insertcoupon() {
+        
+        $this->isAdmin();
+        
+        $data = array(
+            "code" => substr(strtoupper(md5($t)), rand(1,10), 4) ,
+            "title" => strip_tags( $this->security->xss_clean($this->input->post('title')) ),
+            "type" => strip_tags( $this->security->xss_clean($this->input->post('type')) ),
+            "discount" => strip_tags( $this->security->xss_clean($this->input->post('discount')) ),
+            "business_address" => strip_tags( $this->security->xss_clean($this->input->post('business_address')) ),
+            "business_name" => strip_tags( $this->security->xss_clean($this->input->post('business_name')) ),
+            "status" => "A"
+        );
+
+        if($this->db->insert('ls_coupons', $data)) {
+            $feedbackId = $this->db->insert_id();
+		}
+		
+		$_SESSION["msg"] =  "Coupon is added successfully!";
+		header("location:".base_url("admin/addcoupons"));
+    }
 }

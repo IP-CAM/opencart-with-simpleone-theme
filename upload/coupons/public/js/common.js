@@ -179,7 +179,13 @@ $( document ).ready(function() {
         $("#modalShareCmnt .fa-facebook-square").attr('href', objSocialShareUrls.facebook);
         $("#modalShareCmnt .fa-twitter-square").attr('href', objSocialShareUrls.twitter);
         $("#modalShareCmnt .fa-whatsapp-square").attr('href', objSocialShareUrls.whatsapp);
-        $("#modalShareCmnt").modal()
+        $("#modalAddUserCoupon").modal()
+    });
+
+    $(".btnGetCoupon").click(function(){
+        var couponId = $(this).data('couponid') ;
+        $("#coupon_id").val(couponId)
+        $("#modalAddUserCoupon").modal()
     });
 });
 
@@ -207,3 +213,5 @@ function getVoteDetails(tagId, userId) {
     }); 
     return false;
 }
+
+

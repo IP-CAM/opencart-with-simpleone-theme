@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/us';
-//$config['base_url'] = 'http://www.unsaidstuff.com/';
+//$config['base_url'] = 'http://localhost/us';
+$config['base_url'] = 'http://www.localsqaure.in/coupons';
 
 /*
 |--------------------------------------------------------------------------

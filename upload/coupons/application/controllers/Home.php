@@ -73,40 +73,14 @@ class Home extends CI_Controller {
 
 	public function index() {
 
-		$arrThoughtIds = array();
-		$arrLikeData = array();
-		$arrCommentData = array();
+		$query = $this->db->query("SELECT * FROM ls_coupons where status = 'A'");
+		$couponData = $query->result_array(); 
 
-		/*$qr = "select t.*, c.comment_id, c.comment from thoughts t LEFT join comments c on t.thought_id = c.object_id where t.to_user_id = " . $_SESSION['user']['user_id'] . " order by t.created desc ";
-		$query = $this->db->query($qr);
-		$postData = $query->result_array(); 
-		
-		foreach($postData as $key => $post) {
-			array_push($arrThoughtIds, $post['thought_id']);
-
-			$shareURLCmnt = urlencode(base_url('u/'.$_SESSION['user']['username'].'/r/'.$post['thought_id']));
-			$shareTextprofile = "Checkout what other people think about me.";
-			$socialShareUrls = array (
-				"facebook" 	=> "https://www.facebook.com/sharer/sharer.php?u=$shareURLCmnt",
-				"twitter" 	=> "https://twitter.com/intent/tweet?url=$shareURLCmnt&text=$shareTextprofile",
-				"whatsapp"	=> "whatsapp://send?text=".urlencode($shareTextprofile)."%20$shareURLCmnt"
-			); 
-			$strSocialUrls = json_encode($socialShareUrls);
-			$postData[$key]['socialShareUrls'] = $strSocialUrls; 
-
-		}
-
-		$data['thoughtsData'] = $postData;
-
-		$shareURLprofile = urlencode(base_url('u/'.$_SESSION['user']['username']));
-		$shareTextprofile = "Checkout what other people think about me.";
-		$data['shareUrl']['profile']['twitter'] = "https://twitter.com/intent/tweet?url=$shareURLprofile&text=$shareTextprofile";
-		$data['shareUrl']['profile']['facebook'] = "https://www.facebook.com/sharer/sharer.php?u=$shareURLprofile";
-		$data['shareUrl']['profile']['whatsapp'] = "whatsapp://send?text=".urlencode($shareTextprofile)."%20$shareURLprofile";*/
+		$data = array("couponsData" => $couponData);
 
 		$this->load->view('head');
 		$this->load->view('header2');
-		$this->load->view('home3');
+		$this->load->view('home3', $data);
 		$this->load->view('footer');
 	}
 
@@ -325,5 +299,20 @@ class Home extends CI_Controller {
 		$_SESSION["msg"] =  "Your feedback is submitted anonymously.";
 		header("location:".base_url("openfeed"));
 	
+	}
+
+	public function addusercoupon() {
+		$data = array(
+			"email" => $this->input->post('email'),
+			"mobile" => $this->input->post('mobile'),
+			"coupon_id" => $this->input->post('coupon_id')
+		);
+
+		if($this->db->insert('ls_user_coupons', $data)) {
+			$userTagId = $this->db->insert_id();
+		}
+
+		$_SESSION["msg"] =  "Your request is submitted.";
+		header("location:".base_url("/"));
 	}
 }
