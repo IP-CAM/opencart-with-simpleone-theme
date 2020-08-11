@@ -1,0 +1,40 @@
+there will be only positive tags in the system
+for every tag we will show top n users
+other user can tag other users
+other user can vote on the tags of other users
+
+user can add custom tags on which they want take vote
+user can custom tag from home page user can vote on that tags
+
+we are telling what are the best things in people with the help of tags in same way we can tell other best things with the help of tags
+like best doctor, best song, best hotel
+tags will be always associated with something like people or weburl
+
+we will share a tag button which website can paste on their site to get more votes for that tags
+
+
+the best thing in everything
+
+search engine for best things,
+
+on twitter and many other site we have seen one blue logo/mark in front of profile name which indicates official profile thus a star in front of profile will indicate that user is extremly expert/genius/intellegent/smart and a star on tag he is expert/genius in that tag. for star tag we can say like "you have to earn it".
+giving a star will be based on calculation/algorithm like how you identify smart people in real life like in real life you can identify smart/expert people by following things:
+- An expers recommends another expert
+- An expert has some work that proofs he is an expert, we can tell users to add such content for some tags and if user likes it more then he is an expert or experts like will be more important here.
+
+We can create group of expers 
+
+let people add a text message too, text message will be private to user and then user may decide to publish it
+
+people can search according to tags and we will show most voted thing/website for that search tag
+
+people can submit urls of facebook profile for different tags like people can submit profile urls from other social network for tags like intelligence, hot, beautiful
+
+later on we can keep competition against tags
+
+launch the site and start the competition
+
+----table----
+
+in tags table first 1000 are system tags after that everything is added by users tags are unique
+
